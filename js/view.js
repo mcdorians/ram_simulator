@@ -233,6 +233,7 @@ var controllView = $$({
                         <span class="glyphicon glyphicon-pause"></span> pause</button>\n\
                     <button id="reloadbutton" type="button" disabled="disabled" class="btn btn-success">\n\
                         <span class="glyphicon glyphicon-repeat"></span> reload</button>\n\
+                    \n\
                     <div id="errorbox"/>\n\
                 </div>'
     },
@@ -439,7 +440,10 @@ var containerProto = $$({
         }
     }
 });
-var controllContainer = $$(containerProto, {childs: [controllView]});
+var controllContainer = $$(containerProto, {childs: [
+        $$({}, '<a href="readme.html"><button type="button" class="btn btn-default">README</button></a>'),
+        controllView
+    ]});
 var inputContainer = $$(containerProto, {childs: []});
 var costsContainer = $$(containerProto, {childs: [costsView]});
 var accuContainer = $$(containerProto, {childs: [programmView, accumulatorView]});
