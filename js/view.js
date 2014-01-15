@@ -168,7 +168,7 @@ var costsView = $$({
     },
     view: {
         format: '<div class="row">\n\
-                <div class="col-md-1"><h4>Costs</h4></div>\n\
+                <div class="col-md-1"><h4>costs</h4></div>\n\
                 <div class="col-md-1"><p>EKMTime<span class="badge" data-bind="ekmtime"/></p></div>\n\
                 <div class="col-md-1"><p>EKMMem<span class="badge" data-bind="ekmmem"/></p></div>\n\
                 <div class="col-md-1"><p>LKMTime<span class="badge" data-bind="lkmtime"/></p></div>\n\
@@ -209,8 +209,10 @@ var costsView = $$({
             this.model.set({
                 ekmtime: 0,
                 ekmmem: 0,
+                ekmmemmap: {},
                 lkmtime: 0,
-                lkmmem: 0
+                lkmmem: 0,
+                lkmmemmap: {}
             });
         }
 
@@ -327,7 +329,7 @@ HALT',
         format: '<div>\n\
                     <h4>programm</h4>\n\
                  <div id="nonedit">\n\
-                    <h4><span class="label label-success">executionmodus</span></h4>\n\
+                    <h4><span class="label label-success">executionmode</span></h4>\n\
                     <button id="editbutton" type="button" class="btn btn-primary">\n\
                     <span class="glyphicon glyphicon-pencil"></span> edit\n\
                 </button>\n\
@@ -336,7 +338,7 @@ HALT',
                 <tr><th>line</th><th>cmd</th></tr></table>\n\
                 </div>\n\
                 <div id="edit">\n\
-                <h4><span class="label label-primary">editormodus</span></h5>\n\
+                <h4><span class="label label-primary">editmode</span></h5>\n\
                 <div id="inputstripcontainer"/>\n\
                 \n\
                 <textarea data-bind="programmcode" id="programmcode" class="form-control" rows="10">\n\
