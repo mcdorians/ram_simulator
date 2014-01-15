@@ -35,11 +35,11 @@ var inputStrip = $$({
     view: {
         format: '<div class="row form-inline">\n\
                     <div class="col-md-1"><h4>register init</h4></div>\n\
-                    <div class="col-md-1">\n\
+                    <div class="col-md-2">\n\
                     <button id="addinputbutton" type="button" class="btn btn-primary">\n\
-                    <span class="glyphicon glyphicon-plus"></span></button>\n\
+                    <span class="glyphicon glyphicon-plus"> add</span></button>\n\
                     <button id="removeall" type="button" class="btn btn-danger">\n\
-                    <span class="glyphicon glyphicon-remove"></span></button>\n\
+                    <span class="glyphicon glyphicon-remove"> remove all</span></button>\n\
                     </div>\n\
                 </div>',
         style: '& button {margin:3px;}'
@@ -48,8 +48,9 @@ var inputStrip = $$({
         'create': function() {
             var i, tillmann = [0, 1, 2, 10, 1, 4];
             for (i = 0; i < tillmann.length; i++) {
-                this.append($$(inputStripEntryProto, {value: tillmann[i]}));
+                this.append($$(inputStripEntryProto, {value: tillmann[i], name: 'R' + i}));
             }
+            this.model.set({count: i});
             this.trigger('setvalues');
         },
         'click #removeall': function() {
@@ -325,7 +326,9 @@ HALT',
     view: {
         format: '<div>\n\
                     <h4>programm</h4>\n\
-                 <div id="nonedit"><button id="editbutton" type="button" class="btn btn-primary">\n\
+                 <div id="nonedit">\n\
+                    <h4><span class="label label-success">executionmodus</span></h4>\n\
+                    <button id="editbutton" type="button" class="btn btn-primary">\n\
                     <span class="glyphicon glyphicon-pencil"></span> edit\n\
                 </button>\n\
                 \n\
@@ -333,7 +336,9 @@ HALT',
                 <tr><th>line</th><th>cmd</th></tr></table>\n\
                 </div>\n\
                 <div id="edit">\n\
+                <h4><span class="label label-primary">editormodus</span></h5>\n\
                 <div id="inputstripcontainer"/>\n\
+                \n\
                 <textarea data-bind="programmcode" id="programmcode" class="form-control" rows="10">\n\
                 </textarea>\n\
                 <button id="okbutton" type="button" class="btn btn-primary">\n\
