@@ -32,22 +32,72 @@
             <div class="row row-offcanvas row-offcanvas-right">
                 <div class="col-xs-12 col-sm-9">
                     <div class="jumbotron">
-                        <h1>RAM!</h1>
-                        <p>This is an example implementation of an Ramdom Accsess Mashine</p>
+                        <h1>Documentation</h1>
+                        <p>This is an example implementation of a Ramdom Access Maschine</p>
                         <p><a href="https://github.com/mcdorians/ram_simulator/archive/master.zip" class="btn btn-primary btn-lg" role="button">Download</a></p>
                     </div>
                     <div class="row">
                         <div id="post1" class="col-md-12">
                             <h2 class="featurette-heading">What is a RAM?<span class="text-muted"> How does it work?</span></h2>
-                            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                            <p class="lead">A RAM is a model mashine that enables computation through a set of operators and registers. Registers are in-/direct adressable and serve as the memory of the mashine. A RAM is capable of computing any computable sequence. For further information see:<a href="http://en.wikipedia.org/wiki/Random-access_machine">Wikipedia - RAM</a></p>
+                        </div>
+                        <div id="post5" class="col-md-12">
+                            <h2 class="featurette-heading">How to use?<span class="text-muted"></span></h2>
+                            <p class="lead">
+                                Please follow these steps to set the simulator up:
+                            <ul>
+                                <li> write your program using the instruction set </li>
+                                <li> (optinal) define allocation of the inital registers. Plus adds an aditional input field. X deletes all input fields</li>
+                                <li> A click on "ok" ends the editmode and makes the program runable</li>
+                                <li> A click on "edit" sets the program in editmode and resets all execution parameters</li>
+                            </ul>
+                            Please follow thease steps to controll the execution:
+                            <ul>
+                                <li> the controls are only usable if the program is not in editmode</li>
+                                <li> "next" ,makes the RAM execute the next comand</li>
+                                <li> "play" ,calls "next" every second</li>
+                                <li> "pause" ,pauses the automated execution</li>
+                                <li> "reload" ,resets all execution parameters</li>
+                            </ul>
+
                         </div>
                         <div id="post2" class="col-md-12">
                             <h2 class="featurette-heading">Instruction Set<span class="text-muted"> First steps</span></h2>
-                            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                            <p class="lead"><ul>
+                                <li>RA = B ,where A is the registeradress and B can be of one of the following types: integer value, registeradress, indirect registeradress</li>
+                                <li> RA = B op C ,op has an aritmetic operator (+,-,*,/). The division operator is integerbased</li>
+                                <li> GOTO ZL ,continues the execution of the program on line L</li>
+                                <li> GGZ B ZL ,continues the execution of the program on line L, in case B is greater then 0</li>
+                                <li> GLZ B ZL ,continues the execution of the program on line L, in case B is less then 0</li>
+                                <li> GZ B ZL ,continues the execution of the program on line L, in case B is equal to 0</li>
+                                <li> HALT ,stops the RAM (this command is mandatroy and has to be once at the end of each program)</li>
+                            </ul>
                         </div>
                         <div id="post3" class="col-md-12">
                             <h2 class="featurette-heading">Ui Elements<span class="text-muted"> First steps</span></h2>
-                            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                            <p class="lead">This RAM has two modes. 
+                            <ul>
+                                <li><b>Editormode:</b> Enter your program into the editing field and confirm with OK. You can add registers by pressing "add". You may give them a default value used at initialisation of the RAM.</li>
+                                <li><b>Executionmode:</b> Push "Play" to start execution or use "Next" to only do one step at a time. "Reload" reloads the entered program and resets the registers to their defaults set in editmode. </li>
+                            </ul>
+                            During execution </br>
+                            <ul>
+                                <li> the last executed line of the program is marked in the program table </li>
+                                <li> the accumulator is getting updated during execution </li>
+                                <li> the costs are getting updated during execution </li>
+                            </ul>
+
+                        </div>
+                        <div id="post4" class="col-md-12">
+                            <h2 class="featurette-heading">Sample Program<span class="text-muted"></span></h2>
+                            <p class="lead">
+                                R1 = 10 </br>
+                                R10 = 20</br>
+                                R2 = (R1) //indirectly adresses r10 (value of r1)</br>
+                                R2 = R2 - 1</br>
+                                GGZ R2 Z4 //loops 20x then stops</br>
+                                HALT</br>
+                            </p>
                         </div>
                     </div><!--/row-->
                 </div><!--/span-->
@@ -56,16 +106,12 @@
                     <div class="list-group">
                         <a href="#post1" class="list-group-item">RAM?</a>
                         <a href="#post2" class="list-group-item">Instructions</a>
-                        <a href="#post3" class="list-group-item">Ui Elements</a>
+                        <a href="#post3" class="list-group-item">UI Elements</a>
+                        <a href="#post4" class="list-group-item">Sample Program</a>
                     </div>
                 </div><!--/span-->
             </div><!--/row-->
 
-            <hr>
-
-            <footer>
-                <p>© Company 2013</p>
-            </footer>
 
         </div>
 
