@@ -33,13 +33,13 @@
                 <div class="col-xs-12 col-sm-9">
                     <div class="jumbotron">
                         <h1>Documentation</h1>
-                        <p>This is an example implementation of a Ramdom Access Maschine</p>
+                        <p>This is an example implementation of a Ramdom Access Machine</p>
                         <p><a href="https://github.com/mcdorians/ram_simulator/archive/master.zip" class="btn btn-primary btn-lg" role="button">Download</a></p>
                     </div>
                     <div class="row">
                         <div id="post1" class="col-md-12">
                             <h2 class="featurette-heading">What is a RAM?<span class="text-muted"> How does it work?</span></h2>
-                            <p class="lead">A RAM is a model mashine that enables computation through a set of operators and registers. Registers are in-/direct adressable and serve as the memory of the mashine. A RAM is capable of computing any computable sequence. For further information see:<a href="http://en.wikipedia.org/wiki/Random-access_machine">Wikipedia - RAM</a></p>
+                            <p class="lead">A RAM is a model machine that enables computation through a set of operators and registers. Registers are in-/direct adressable and serve as the memory of the mashine. A RAM is capable of computing any computable sequence. For further information see:<a href="http://en.wikipedia.org/wiki/Random-access_machine">Wikipedia - RAM</a></p>
                         </div>
                         <div id="post5" class="col-md-12">
                             <h2 class="featurette-heading">How to use?<span class="text-muted"></span></h2>
@@ -47,14 +47,14 @@
                                 Please follow these steps to set the simulator up:</p>
                             <ul>
                                 <li> write your program using the instruction set </li>
-                                <li> (optinal) define allocation of the inital registers. Plus adds an aditional input field. X deletes all input fields</li>
-                                <li> A click on "ok" ends the editmode and makes the program runable</li>
+                                <li> (optional) define allocation of the initial registers. Plus adds an additional input field. X deletes all input fields</li>
+                                <li> A click on "ok" ends the editmode and makes the program runnable</li>
                                 <li> A click on "edit" sets the program in editmode and resets all execution parameters</li>
                             </ul>
-                            <p class="lead">Please follow thease steps to controll the execution:</p>
+                            <p class="lead">Please follow these steps to control the execution:</p>
                             <ul>
                                 <li> the controls are only usable if the program is not in editmode</li>
-                                <li> "next" ,makes the RAM execute the next comand</li>
+                                <li> "next" ,makes the RAM execute the next command</li>
                                 <li> "play" ,calls "next" every second</li>
                                 <li> "pause" ,pauses the automated execution</li>
                                 <li> "reload" ,resets all execution parameters</li>
@@ -65,12 +65,12 @@
                             <h2 class="featurette-heading">Instruction Set<span class="text-muted"> First steps</span></h2>
                             <p class="lead"></p><ul>
                                 <li>RA = B ,where A is the registeradress and B can be of one of the following types: integer value, registeradress, indirect registeradress</li>
-                                <li> RA = B op C ,op has an aritmetic operator (+,-,*,/). The division operator is integerbased</li>
+                                <li> RA = B op C ,op has an arithmetic operator (+,-,*,/). The division operator is integerbased</li>
                                 <li> GOTO ZL ,continues the execution of the program on line L</li>
                                 <li> GGZ B ZL ,continues the execution of the program on line L, in case B is greater then 0</li>
                                 <li> GLZ B ZL ,continues the execution of the program on line L, in case B is less then 0</li>
                                 <li> GZ B ZL ,continues the execution of the program on line L, in case B is equal to 0</li>
-                                <li> HALT ,stops the RAM (this command is mandatroy and has to be once at the end of each program)</li>
+                                <li> HALT ,stops the RAM (this command is mandatory and has to be once at the end of each program)</li>
                             </ul>
                         </div>
                         <div id="post3" class="col-md-12">
