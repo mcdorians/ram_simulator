@@ -459,3 +459,6 @@ $$.document.append(controllContainer);
 //$$.document.append(inputContainer);
 $$.document.append(costsContainer);
 $$.document.append(accuContainer);
+$$.document.append($$({}, '<footer>Coding: Dorian Knoblauch , Christoph Weinhold</footer>'));
+
+$('#programmcode').linedtextarea();
