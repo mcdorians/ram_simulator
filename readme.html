@@ -39,7 +39,7 @@
                     <div class="row">
                         <div id="post1" class="col-md-12">
                             <h2 class="featurette-heading">What is a RAM?<span class="text-muted"> How does it work?</span></h2>
-                            <p class="lead">A RAM is a model machine that enables computation through a set of operators and registers. Registers are in-/direct adressable and serve as the memory of the mashine. A RAM is capable of computing any computable sequence. For further information see:<a href="http://en.wikipedia.org/wiki/Random-access_machine">Wikipedia - RAM</a></p>
+                            <p class="lead">A RAM is a model machine that enables computation through a set of operators and registers. Registers are in-/direct adressable and serve as the memory of the machine. It has basic arithmetic functions and a finite set of more complex instructions. A RAM is capable of computing any computable sequence and thus is (in it's extended RASP-form) equivalent of the universal Turing machine.  For further information see:<a href="http://en.wikipedia.org/wiki/Random-access_machine">Wikipedia - RAM</a></p>
                         </div>
                         <div id="post5" class="col-md-12">
                             <h2 class="featurette-heading">How to use?<span class="text-muted"></span></h2>
@@ -64,12 +64,13 @@
                         <div id="post2" class="col-md-12">
                             <h2 class="featurette-heading">Instruction Set<span class="text-muted"> First steps</span></h2>
                             <p class="lead"></p><ul>
-                                <li>RA = B ,where A is the registeradress and B can be of one of the following types: integer value, registeradress, indirect registeradress</li>
-                                <li> RA = B op C ,op has an arithmetic operator (+,-,*,/). The division operator is integerbased</li>
+                                <li> RA = B ,where A is the registeradress and B can be of one of the following types: integer value, registeradress, indirect registeradress</li>
+                                <li> RA = (RB), where A is the registeradress and (RB) is the indirect adressment of the adress saved in register b.</li>
+  							    <li> RA = B op C ,op has an arithmetic operator (+,-,*,/). The division operator is integerbased</li>
                                 <li> GOTO ZL ,continues the execution of the program on line L</li>
-                                <li> GGZ B ZL ,continues the execution of the program on line L, in case B is greater then 0</li>
-                                <li> GLZ B ZL ,continues the execution of the program on line L, in case B is less then 0</li>
-                                <li> GZ B ZL ,continues the execution of the program on line L, in case B is equal to 0</li>
+                                <li> GGZ B ZL ,continues the execution of the program on line L, in case B (integer value, registeradress, indirect registeradress) is greater then 0</li>
+                                <li> GLZ B ZL ,continues the execution of the program on line L, in case B (integer value, registeradress, indirect registeradress) is less then 0</li>
+                                <li> GZ B ZL ,continues the execution of the program on line L, in case B (integer value, registeradress, indirect registeradress) is equal to 0</li>
                                 <li> HALT ,stops the RAM (this command is mandatory and has to be once at the end of each program)</li>
                             </ul>
                         </div>
@@ -93,7 +94,7 @@
                             <p class="lead">
                                 R1 = 10 </br>
                                 R10 = 20</br>
-                                R2 = (R1) //indirectly adresses r10 (value of r1)</br>
+                                R2 = (R1) //indirectly adresses r10 </br>
                                 R2 = R2 - 1</br>
                                 GGZ R2 Z4 //loops 20x then stops</br>
                                 HALT</br>
